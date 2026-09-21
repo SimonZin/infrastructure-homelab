@@ -1,0 +1,38 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+id_*
+credentials*
+secrets*
+
+# Databases and operational state
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Archives / backups
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.zst
+*.bak
+*.backup
+
+# Raw evidence should never enter the public repository
+private/
+evidence/
+evidence-raw/
+raw-logs/
+
+# Local editor / OS state
+.DS_Store
+.idea/
+.vscode/
+*.swp
