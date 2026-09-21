@@ -1,0 +1,12 @@
+network:
+  version: 2
+  ethernets:
+    ens18:
+      addresses:
+        - 10.10.20.11/24
+      routes:
+        - to: default
+          via: 10.10.20.1
+      nameservers:
+        addresses:
+          - 10.10.20.1

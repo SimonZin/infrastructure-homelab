@@ -1,0 +1,16 @@
+auto lo
+iface lo inet loopback
+
+iface nic0 inet manual
+        # Persistent workaround for observed e1000e/TSO hardware hangs.
+        pre-up /usr/sbin/ethtool -K nic0 tso off
+
+auto vmbr0
+iface vmbr0 inet static
+        address 10.10.20.10/24
+        gateway 10.10.20.1
+        bridge-ports nic0
+        bridge-stp off
+        bridge-fd 0
+
+source /etc/network/interfaces.d/*

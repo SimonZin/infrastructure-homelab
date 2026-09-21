@@ -1,0 +1,22 @@
+dir: local
+        path /var/lib/vz
+        content backup,import,vztmpl,iso
+
+lvmthin: local-lvm
+        thinpool data
+        vgname pve
+        content images,rootdir
+
+dir: backup-storage
+        path /mnt/backup
+        content backup
+        is_mountpoint 1
+        prune-backups keep-all=1
+        shared 0
+
+dir: live-data
+        path /mnt/live-data
+        content snippets,rootdir,images
+        is_mountpoint 1
+        prune-backups keep-all=1
+        shared 0
